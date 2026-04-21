@@ -1,0 +1,1 @@
+Consider using Redis sorted sets (ZSET) for implementing the sliding window. This data structure is particularly well-suited for tracking time-based events and can help maintain consistency across distributed instances.

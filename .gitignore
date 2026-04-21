@@ -1,0 +1,35 @@
+# Binary/documents (excluded per project policy)
+*.pdf
+*.ppt
+*.pptx
+*.doc
+*.docx
+
+# Pre-existing ignores
+./*/solution/logs/
+logs/
+./*/solution/certs/
+certs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Node
+node_modules/
+
+# Internal tooling artifacts
+.omc/
+.playwright-mcp/
+.claude/
+
+# Go build artifacts
+*.exe
+*.test
+*.out
+bin/

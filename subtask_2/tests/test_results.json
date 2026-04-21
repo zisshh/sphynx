@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Authentication",
+    "description": "Tests the API endpoint for user authentication",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Certificate Generation",
+    "description": "Tests the API endpoint for generating certificates",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Get All Certificates",
+    "description": "Tests the API endpoint for retrieving all certificates",
+    "type": "integration",
+    "isPassing": true
+  },
+  {
+    "title": "Renew Certificate",
+    "description": "Tests the API endpoint for renewing a certificate",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "IP Blacklisting",
+    "description": "Tests the API endpoint for blacklisting IP addresses",
+    "type": "integration",
+    "isPassing": true
+  }
+]

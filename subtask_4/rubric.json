@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Strategy Pattern",
+    "description": "Implements the Strategy pattern to support different load balancing algorithms such as Weighted Round-Robin and Least Connections."
+  },
+  {
+    "title": "Observer Pattern",
+    "description": "Uses the Observer pattern to dynamically update routing rules without requiring a service restart."
+  },
+  {
+    "title": "Chain of Responsibility",
+    "description": "Applies the Chain of Responsibility pattern to sequentially process routing rules and determine the target server for requests."
+  }
+]

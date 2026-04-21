@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Decorator Pattern",
+    "description": "Uses the Decorator pattern for middleware managing IP blacklisting and Basic Authentication."
+  },
+  {
+    "title": "Observer Pattern",
+    "description": "Uses the Observer pattern for monitoring and dynamically applying updates to IP rules or SSL configurations."
+  },
+  {
+    "title": "Builder Pattern",
+    "description": "Uses the Builder pattern for constructing HTTPS-enabled virtual services with associated certificates."
+  }
+]

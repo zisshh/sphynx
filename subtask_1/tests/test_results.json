@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Create Virtual Service",
+    "description": "Tests the API endpoint for creating a new virtual service with basic configuration",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "List Virtual Services",
+    "description": "Tests the API endpoint for retrieving all configured virtual services",
+    "type": "integration",
+    "isPassing": true
+  },
+  {
+    "title": "Get Single Virtual Service",
+    "description": "Tests the API endpoint for retrieving a specific virtual service by ID",
+    "type": "integration",
+    "isPassing": true
+  },
+  {
+    "title": "Update Virtual Service",
+    "description": "Tests the API endpoint for updating an existing virtual service configuration",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Delete Virtual Service",
+    "description": "Tests the API endpoint for removing a virtual service",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Virtual Service Functionality",
+    "description": "Tests if virtual service properly forwards requests to backend servers",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Round Robin Algorithm",
+    "description": "Tests round robin load balancer for equal request distribution among servers",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Weighted Round Robin Algorithm",
+    "description": "Tests weighted round robin load balancer for proportional request distribution",
+    "type": "e2e",
+    "isPassing": true
+  }
+]

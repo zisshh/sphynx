@@ -1,0 +1,1109 @@
+================================================================================
+                    UML DIAGRAMS FOR ADVANCED LOAD BALANCER PROJECT
+================================================================================
+                         PlantUML Code for All Diagrams
+================================================================================
+
+Instructions:
+- Copy the code between @startuml and @enduml
+- Paste into PlantUML editor (https://www.plantuml.com/plantuml/uml/)
+- Or use VS Code PlantUML extension
+- Or use any PlantUML compatible tool
+
+================================================================================
+                    3.5.1 WORK BREAKDOWN STRUCTURE (WBS)
+================================================================================
+
+@startuml WBS_Diagram
+@startwbs
+* Advanced Load Balancer System
+** 1. Project Initiation
+*** 1.1 Requirements Gathering
+*** 1.2 Technology Selection
+*** 1.3 Architecture Planning
+*** 1.4 Environment Setup
+** 2. Core Load Balancer (Phase 1)
+*** 2.1 Server Model Implementation
+**** 2.1.1 Server struct definition
+**** 2.1.2 Health check method
+**** 2.1.3 Connection tracking
+*** 2.2 VirtualService Implementation
+**** 2.2.1 VirtualService struct
+**** 2.2.2 HTTP server startup
+**** 2.2.3 Request forwarding
+*** 2.3 Load Balancing Algorithms
+**** 2.3.1 Round Robin
+**** 2.3.2 Weighted Round Robin
+**** 2.3.3 Least Connections
+**** 2.3.4 Weighted Least Connections
+*** 2.4 Health Check System
+**** 2.4.1 Scheduler setup (gocron)
+**** 2.4.2 HTTP HEAD requests
+**** 2.4.3 Retry logic
+*** 2.5 REST API - Virtual Services
+**** 2.5.1 GET /access/vs
+**** 2.5.2 GET /access/vs/{id}
+**** 2.5.3 POST /access/vs
+**** 2.5.4 PUT /access/vs/{id}
+**** 2.5.5 DELETE /access/vs/{id}
+*** 2.6 Configuration Management
+**** 2.6.1 JSON config loading
+**** 2.6.2 Config file watcher
+**** 2.6.3 Dynamic reload
+** 3. SSL & Security (Phase 2)
+*** 3.1 Basic Authentication
+**** 3.1.1 Auth middleware
+**** 3.1.2 Credential validation
+*** 3.2 SSL Certificate Management
+**** 3.2.1 Certificate generation
+**** 3.2.2 Certificate renewal
+**** 3.2.3 Daily rotation job
+**** 3.2.4 Certificate storage
+*** 3.3 HTTPS Configuration
+**** 3.3.1 HTTPS server startup
+**** 3.3.2 HTTP to HTTPS redirect
+*** 3.4 IP Blacklisting
+**** 3.4.1 Blacklist middleware
+**** 3.4.2 IP rules API
+** 4. Distributed Rate Limiting (Phase 3)
+*** 4.1 Redis Integration
+**** 4.1.1 Redis client setup
+**** 4.1.2 Connection pooling
+*** 4.2 Sliding Window Algorithm
+**** 4.2.1 Timestamp tracking
+**** 4.2.2 Window calculation
+**** 4.2.3 Atomic operations
+*** 4.3 Rate Limit Middleware
+**** 4.3.1 Request interception
+**** 4.3.2 Limit enforcement
+*** 4.4 Rate Limit API
+**** 4.4.1 POST /access/vs/rate-limits
+*** 4.5 Graceful Degradation
+**** 4.5.1 Redis failure handling
+**** 4.5.2 Fallback behavior
+** 5. Content-Based Routing (Phase 4)
+*** 5.1 Routing Rules Model
+**** 5.1.1 ContentRoutingRule struct
+**** 5.1.2 Rule matching logic
+*** 5.2 Content Router
+**** 5.2.1 Header-based selection
+**** 5.2.2 Server mapping
+*** 5.3 Routing Rules API
+**** 5.3.1 POST /access/vs/{id}/rules
+**** 5.3.2 GET /access/vs/{id}/rules
+**** 5.3.3 DELETE /access/vs/{id}/rules/{idx}
+*** 5.4 Default Behavior
+**** 5.4.1 503 for no match
+**** 5.4.2 Error logging
+** 6. Integration & Testing
+*** 6.1 Unit Testing
+*** 6.2 Integration Testing
+*** 6.3 Performance Testing
+*** 6.4 Bug Fixes
+** 7. Documentation
+*** 7.1 Code Documentation
+*** 7.2 API Documentation
+*** 7.3 Project Report
+*** 7.4 Presentation
+@endwbs
+@enduml
+
+
+================================================================================
+                    3.5.2 GANTT CHART (December 2025 - January 2026)
+                         Project Status: 60% Complete
+================================================================================
+
+@startuml Gantt_Chart
+projectscale daily
+Project starts 2025-12-01
+title Advanced Load Balancer - Project Gantt Chart (60% Complete)
+
+-- Project Initiation --
+[Requirements Gathering] starts 2025-12-01 and ends 2025-12-03
+[Technology Selection] starts 2025-12-02 and ends 2025-12-04
+[Architecture Planning] starts 2025-12-03 and ends 2025-12-06
+[Environment Setup] starts 2025-12-05 and ends 2025-12-07
+
+-- Phase 1: Core Load Balancer --
+[Server Model Implementation] starts 2025-12-08 and ends 2025-12-11
+[VirtualService Implementation] starts 2025-12-10 and ends 2025-12-14
+[Load Balancing Algorithms] starts 2025-12-12 and ends 2025-12-18
+[Health Check System] starts 2025-12-16 and ends 2025-12-20
+[REST API - Virtual Services] starts 2025-12-18 and ends 2025-12-23
+[Configuration Management] starts 2025-12-21 and ends 2025-12-25
+[Phase 1 Testing] starts 2025-12-24 and ends 2025-12-27
+
+-- Phase 2: SSL & Security --
+[Basic Authentication] starts 2025-12-26 and ends 2025-12-29
+[SSL Certificate Management] starts 2025-12-28 and ends 2026-01-02
+[HTTPS Configuration] starts 2025-12-31 and ends 2026-01-03
+[IP Blacklisting] starts 2026-01-02 and ends 2026-01-05
+[Phase 2 Testing] starts 2026-01-04 and ends 2026-01-07
+
+-- Phase 3: Distributed Rate Limiting (IN PROGRESS) --
+[Redis Integration] starts 2026-01-06 and ends 2026-01-09
+[Redis Integration] is 60% completed
+[Sliding Window Algorithm] starts 2026-01-08 and ends 2026-01-12
+[Sliding Window Algorithm] is 30% completed
+[Rate Limit Middleware] starts 2026-01-10 and ends 2026-01-14
+[Rate Limit Middleware] is 0% completed
+[Rate Limit API] starts 2026-01-12 and ends 2026-01-15
+[Rate Limit API] is 0% completed
+[Graceful Degradation] starts 2026-01-14 and ends 2026-01-17
+[Graceful Degradation] is 0% completed
+
+-- Phase 4: Content-Based Routing (PENDING) --
+[Routing Rules Model] starts 2026-01-16 and ends 2026-01-19
+[Content Router] starts 2026-01-18 and ends 2026-01-22
+[Routing Rules API] starts 2026-01-20 and ends 2026-01-24
+[Default Behavior] starts 2026-01-22 and ends 2026-01-25
+
+-- Final Phase: Integration & Documentation (PENDING) --
+[Integration Testing] starts 2026-01-24 and ends 2026-01-28
+[Bug Fixes] starts 2026-01-26 and ends 2026-01-29
+[Documentation] starts 2026-01-27 and ends 2026-01-31
+
+-- Milestones --
+[M1: Core LB Complete] happens 2025-12-27
+[M2: Security Complete] happens 2026-01-07
+[M3: Rate Limiting Complete] happens 2026-01-17
+[M4: Content Routing Complete] happens 2026-01-25
+[M5: Project Complete] happens 2026-01-31
+
+' Current Date Marker (60% completion point)
+[TODAY - 60% Complete] happens 2026-01-08
+
+@enduml
+
+
+================================================================================
+            3.5.2 GANTT CHART (Alternative - Weekly View)
+================================================================================
+
+@startuml Gantt_Chart_Weekly
+projectscale weekly
+Project starts 2025-12-01
+title Advanced Load Balancer - Weekly Gantt Chart
+
+-- Phase 1: Core Load Balancer (COMPLETED) --
+[1.1 Server & VS Models] starts 2025-12-01 and lasts 2 weeks
+[1.1 Server & VS Models] is 100% completed
+[1.2 LB Algorithms] starts 2025-12-08 and lasts 2 weeks
+[1.2 LB Algorithms] is 100% completed
+[1.3 Health Checks] starts 2025-12-15 and lasts 1 week
+[1.3 Health Checks] is 100% completed
+[1.4 REST API & Config] starts 2025-12-15 and lasts 2 weeks
+[1.4 REST API & Config] is 100% completed
+
+-- Phase 2: SSL & Security (COMPLETED) --
+[2.1 Basic Auth] starts 2025-12-22 and lasts 1 week
+[2.1 Basic Auth] is 100% completed
+[2.2 SSL Management] starts 2025-12-29 and lasts 1 week
+[2.2 SSL Management] is 100% completed
+[2.3 IP Blacklisting] starts 2026-01-01 and lasts 1 week
+[2.3 IP Blacklisting] is 100% completed
+
+-- Phase 3: Rate Limiting (IN PROGRESS - 60%) --
+[3.1 Redis Integration] starts 2026-01-05 and lasts 1 week
+[3.1 Redis Integration] is 60% completed
+[3.2 Sliding Window] starts 2026-01-08 and lasts 1 week
+[3.2 Sliding Window] is 30% completed
+[3.3 Middleware & API] starts 2026-01-12 and lasts 1 week
+[3.3 Middleware & API] is 0% completed
+
+-- Phase 4: Content Routing (PENDING) --
+[4.1 Routing Rules] starts 2026-01-15 and lasts 1 week
+[4.2 Content Router] starts 2026-01-19 and lasts 1 week
+[4.3 Rules API] starts 2026-01-22 and lasts 1 week
+
+-- Phase 5: Final Integration (PENDING) --
+[5.1 Testing & Fixes] starts 2026-01-26 and lasts 1 week
+[5.2 Documentation] starts 2026-01-26 and lasts 1 week
+
+@enduml
+
+
+================================================================================
+                    3.5.3 WORKFLOW MODEL (Activity Diagram)
+================================================================================
+
+@startuml Workflow_Activity_Diagram
+title Advanced Load Balancer - Request Processing Workflow
+
+start
+
+:Receive Client Request;
+
+partition "Security Layer" {
+    :Check IP Blacklist;
+    if (IP Blocked?) then (yes)
+        :Return 403 Forbidden;
+        stop
+    else (no)
+    endif
+    
+    :Check Basic Authentication;
+    if (Valid Credentials?) then (no)
+        :Return 401 Unauthorized;
+        stop
+    else (yes)
+    endif
+    
+    :Check Rate Limit;
+    if (Rate Limit Exceeded?) then (yes)
+        :Return 429 Too Many Requests;
+        stop
+    else (no)
+    endif
+}
+
+partition "Request Routing" {
+    :Identify Target Virtual Service;
+    if (Virtual Service Found?) then (no)
+        :Return 404 Not Found;
+        stop
+    else (yes)
+    endif
+    
+    :Determine Load Balancing Algorithm;
+    
+    switch (Algorithm Type?)
+    case (Round Robin)
+        :Select Next Server in Sequence;
+    case (Weighted Round Robin)
+        :Select Server Based on Weight;
+    case (Least Connections)
+        :Select Server with Min Connections;
+    case (Weighted Least Connections)
+        :Select Server with Min Connection/Weight Ratio;
+    case (Content Based)
+        :Match Request Headers to Rules;
+        if (Rule Matched?) then (no)
+            :Return 503 No Matching Rule;
+            stop
+        else (yes)
+            :Select Mapped Server;
+        endif
+    endswitch
+}
+
+partition "Server Selection" {
+    :Check Server Health Status;
+    if (Server Healthy?) then (no)
+        :Try Next Server;
+        if (Any Healthy Server?) then (no)
+            :Return 503 Service Unavailable;
+            stop
+        else (yes)
+        endif
+    else (yes)
+    endif
+    
+    :Increment Connection Count;
+}
+
+partition "Request Forwarding" {
+    :Create Reverse Proxy;
+    :Forward Request to Backend Server;
+    :Receive Response from Backend;
+    :Decrement Connection Count;
+    :Return Response to Client;
+}
+
+stop
+
+@enduml
+
+
+================================================================================
+                    3.5.3 WORKFLOW MODEL (State Machine)
+================================================================================
+
+@startuml Workflow_State_Diagram
+title Load Balancer - Server State Machine
+
+[*] --> Initializing : System Startup
+
+Initializing --> HealthChecking : Config Loaded
+
+state HealthChecking {
+    [*] --> SendingProbe
+    SendingProbe --> WaitingResponse : HTTP HEAD Sent
+    WaitingResponse --> EvaluatingResult : Response Received
+    WaitingResponse --> RetryingProbe : Timeout
+    RetryingProbe --> SendingProbe : Retry Count < 3
+    RetryingProbe --> MarkUnhealthy : Retry Count >= 3
+    EvaluatingResult --> MarkHealthy : HTTP 200
+    EvaluatingResult --> RetryingProbe : Non-200
+}
+
+MarkHealthy --> Healthy
+MarkUnhealthy --> Unhealthy
+
+state Healthy {
+    [*] --> AvailableForTraffic
+    AvailableForTraffic --> ProcessingRequest : Request Assigned
+    ProcessingRequest --> AvailableForTraffic : Request Complete
+}
+
+state Unhealthy {
+    [*] --> ExcludedFromPool
+    ExcludedFromPool --> RecoveryCheck : 2 Second Interval
+    RecoveryCheck --> ExcludedFromPool : Still Unhealthy
+    RecoveryCheck --> Healthy : Health Restored
+}
+
+Healthy --> HealthChecking : Periodic Check (2s)
+Unhealthy --> HealthChecking : Periodic Check (2s)
+
+@enduml
+
+
+================================================================================
+            5.3 SEQUENCE DIAGRAM - Request Forwarding Flow
+================================================================================
+
+@startuml Sequence_Request_Forwarding
+title Sequence Diagram: Request Forwarding Flow
+
+actor Client
+participant "Load Balancer\n(HTTP Handler)" as LB
+participant "IP Blacklist\nMiddleware" as IPM
+participant "Auth\nMiddleware" as Auth
+participant "Rate Limit\nMiddleware" as RL
+participant "Load Balancing\nModule" as LBM
+participant "Health State" as HS
+database "Backend Server" as Backend
+
+Client -> LB : HTTP Request
+activate LB
+
+LB -> IPM : Check IP
+activate IPM
+IPM -> IPM : Lookup blacklist
+alt IP is Blacklisted
+    IPM --> Client : 403 Forbidden
+else IP is Allowed
+    IPM -> Auth : Pass to Auth
+    deactivate IPM
+end
+
+activate Auth
+Auth -> Auth : Decode Base64 credentials
+Auth -> Auth : Validate username:password
+alt Invalid Credentials
+    Auth --> Client : 401 Unauthorized
+else Valid Credentials
+    Auth -> RL : Pass to Rate Limiter
+    deactivate Auth
+end
+
+activate RL
+RL -> RL : Get VS rate limit config
+RL -> RL : Check sliding window (Redis)
+alt Rate Limit Exceeded
+    RL --> Client : 429 Too Many Requests
+else Within Limit
+    RL -> LB : Continue to handler
+    deactivate RL
+end
+
+LB -> LBM : GetHealthyServer(VS, Request)
+activate LBM
+
+LBM -> HS : Get server health states
+activate HS
+HS --> LBM : Health status map
+deactivate HS
+
+alt Algorithm: Round Robin
+    LBM -> LBM : Select next in sequence
+else Algorithm: Least Connections
+    LBM -> LBM : Find min connections
+else Algorithm: Content Based
+    LBM -> LBM : Match header rules
+end
+
+LBM --> LB : Selected Server
+deactivate LBM
+
+LB -> LB : Increment server.Connections
+LB -> Backend : Forward Request (Reverse Proxy)
+activate Backend
+Backend --> LB : Response
+deactivate Backend
+
+LB -> LB : Decrement server.Connections
+LB --> Client : HTTP Response
+deactivate LB
+
+@enduml
+
+
+================================================================================
+            5.3 SEQUENCE DIAGRAM - Health Check Flow
+================================================================================
+
+@startuml Sequence_Health_Check
+title Sequence Diagram: Health Check Flow
+
+participant "Scheduler\n(gocron)" as Scheduler
+participant "Health Check\nModule" as HC
+participant "Server" as Server
+participant "Health State\nMap" as HSM
+participant "Logger" as Log
+database "Backend Server" as Backend
+
+loop Every 2 Seconds
+    Scheduler -> HC : Trigger health check
+    activate HC
+    
+    loop For each server in VS.ServerList
+        HC -> Server : CheckHealth()
+        activate Server
+        
+        Server -> Backend : HTTP HEAD /
+        activate Backend
+        
+        alt Response received
+            Backend --> Server : HTTP 200 OK
+            Server -> Server : health = true
+        else Timeout or Error
+            Backend --> Server : Error/Timeout
+            Server -> Server : retryCount++
+            
+            alt retryCount < 3
+                Server -> Backend : Retry HTTP HEAD
+            else retryCount >= 3
+                Server -> Server : health = false
+            end
+        end
+        deactivate Backend
+        
+        Server --> HC : Return health status
+        deactivate Server
+        
+        HC -> HSM : UpdateHealthState(url, health)
+        activate HSM
+        
+        HSM -> HSM : Lock mutex
+        HSM -> HSM : Update map[url] = health
+        HSM -> HSM : Unlock mutex
+        
+        alt Health status changed
+            HSM -> Log : Log health transition
+            activate Log
+            alt Server now healthy
+                Log -> Log : INFO: "Server back to healthy"
+            else Server now unhealthy
+                Log -> Log : WARN: "Server is down"
+            end
+            deactivate Log
+        end
+        
+        deactivate HSM
+    end
+    
+    deactivate HC
+end
+
+@enduml
+
+
+================================================================================
+            5.3 SEQUENCE DIAGRAM - Rate Limiting Check
+================================================================================
+
+@startuml Sequence_Rate_Limiting
+title Sequence Diagram: Distributed Rate Limiting (Sliding Window)
+
+participant "Rate Limit\nMiddleware" as RLM
+participant "Utils" as Utils
+database "Redis" as Redis
+participant "HTTP Handler" as Handler
+
+-> RLM : Incoming Request
+activate RLM
+
+RLM -> RLM : Extract VS port from request
+RLM -> RLM : Get VS rate limit config
+
+RLM -> Utils : AllowRequestSlidingWindow(\n  redisClient, port,\n  windowSize=60, maxRequests)
+activate Utils
+
+Utils -> Utils : Generate key: "rate_limit:{port}"
+Utils -> Utils : Get current timestamp
+
+Utils -> Redis : ZREMRANGEBYSCORE key\n  0 (now - windowSize)
+activate Redis
+note right of Redis : Remove expired entries\noutside 60-second window
+Redis --> Utils : OK
+deactivate Redis
+
+Utils -> Redis : ZADD key timestamp timestamp
+activate Redis
+note right of Redis : Add current request\ntimestamp to sorted set
+Redis --> Utils : OK
+deactivate Redis
+
+Utils -> Redis : ZCARD key
+activate Redis
+note right of Redis : Count requests\nin current window
+Redis --> Utils : count
+deactivate Redis
+
+Utils -> Utils : Compare count vs maxRequests
+
+alt count <= maxRequests
+    Utils --> RLM : true (allowed)
+    deactivate Utils
+    
+    RLM -> Handler : Continue to handler
+    activate Handler
+    Handler --> RLM : Response
+    deactivate Handler
+    
+    RLM --> : HTTP Response
+    
+else count > maxRequests
+    Utils --> RLM : false (denied)
+    
+    RLM -> RLM : Get VS.StatusCode (429)
+    RLM -> RLM : Get VS.Message
+    RLM --> : 429 Too Many Requests\n{"error": "Rate limit exceeded"}
+end
+
+deactivate RLM
+
+@enduml
+
+
+================================================================================
+            5.3 SEQUENCE DIAGRAM - SSL Certificate Generation
+================================================================================
+
+@startuml Sequence_SSL_Certificate
+title Sequence Diagram: SSL Certificate Generation & Renewal
+
+actor Admin
+participant "API Handler" as API
+participant "SSL Module\n(models/ssl.go)" as SSL
+participant "Crypto\n(crypto/x509)" as Crypto
+participant "File System" as FS
+participant "Virtual Service" as VS
+
+== Certificate Generation ==
+
+Admin -> API : POST /access/vs/certificates/generate\n{commonName, port, days}
+activate API
+
+API -> API : Parse JSON payload
+API -> SSL : GenerateCertificate(port, commonName, days)
+activate SSL
+
+SSL -> FS : MkdirAll("certs/{port}")
+activate FS
+FS --> SSL : Directory created
+deactivate FS
+
+SSL -> Crypto : GenerateKey(ECDSA P-256)
+activate Crypto
+Crypto --> SSL : Private key
+deactivate Crypto
+
+SSL -> Crypto : CreateCertificate(template, privateKey)
+activate Crypto
+note right of Crypto : X.509 certificate with:\n- Serial number\n- Subject CN\n- Validity period\n- Key usage\n- DNS names
+Crypto --> SSL : Certificate DER bytes
+deactivate Crypto
+
+SSL -> FS : WritePEM("certs/{port}/cert.crt", cert)
+SSL -> FS : WritePEM("certs/{port}/key.key", key)
+activate FS
+FS --> SSL : Files written
+deactivate FS
+
+SSL -> SSL : Certificates[port] = {certPath, keyPath}
+SSL --> API : certPath, keyPath
+deactivate SSL
+
+API -> VS : Restart with HTTPS
+activate VS
+VS -> VS : StopExistingServer(port)
+VS -> VS : StartHTTPS(forwardHandler)
+VS --> API : HTTPS server started
+deactivate VS
+
+API --> Admin : 201 Created\n{status, cert, key, port}
+deactivate API
+
+== Daily Certificate Rotation ==
+
+participant "Rotation\nGoroutine" as Rotation
+
+loop Every 24 Hours
+    Rotation -> SSL : RotateCertificates()
+    activate SSL
+    
+    loop For each certificate in Certificates
+        SSL -> SSL : IsCertificateExpiring(certPath, 30)
+        
+        alt Expiring within 30 days
+            SSL -> FS : Backup cert and key
+            SSL -> SSL : RenewCertificate(port, cn, 365)
+            SSL -> SSL : Update Certificates map
+            SSL -> VS : Restart HTTPS server
+        end
+    end
+    
+    deactivate SSL
+end
+
+@enduml
+
+
+================================================================================
+            5.3 SEQUENCE DIAGRAM - Content-Based Routing
+================================================================================
+
+@startuml Sequence_Content_Routing
+title Sequence Diagram: Content-Based Routing
+
+actor Client
+participant "Virtual Service\nHandler" as VSH
+participant "Load Balancing\nModule" as LBM
+participant "Content Routing\nRules" as CRR
+participant "Server" as Server
+database "Backend US" as US
+database "Backend EU" as EU
+database "Backend ASIA" as ASIA
+
+== Request with X-Country: US ==
+
+Client -> VSH : GET /api/data\nX-Country: US
+activate VSH
+
+VSH -> LBM : GetHealthyServer(VS, request)
+activate LBM
+
+LBM -> LBM : Check algorithm == "content_based"
+LBM -> LBM : GetContentBasedServer(VS, request)
+
+loop For each rule in ContentRoutingRules
+    LBM -> CRR : rule.Matches(request)
+    activate CRR
+    
+    CRR -> CRR : req.Header.Get("X-Country")
+    CRR -> CRR : Compare "US" == rule.Value
+    
+    alt Rule 1: {key: "X-Country", value: "US", server: "ServerUS"}
+        CRR --> LBM : true (matched)
+        deactivate CRR
+        
+        LBM -> Server : Find server by name "ServerUS"
+        activate Server
+        Server -> Server : Check server.Health
+        
+        alt Server Healthy
+            Server --> LBM : ServerUS instance
+        else Server Unhealthy
+            Server --> LBM : Continue to next rule
+        end
+        deactivate Server
+    end
+end
+
+LBM --> VSH : Selected: ServerUS
+deactivate LBM
+
+VSH -> US : Forward request
+activate US
+US --> VSH : Response data
+deactivate US
+
+VSH --> Client : HTTP 200 OK\n{data from US server}
+deactivate VSH
+
+== Request with No Matching Header ==
+
+Client -> VSH : GET /api/data\nX-Country: UNKNOWN
+activate VSH
+
+VSH -> LBM : GetHealthyServer(VS, request)
+activate LBM
+
+loop For each rule (none match "UNKNOWN")
+    LBM -> CRR : rule.Matches(request)
+    CRR --> LBM : false
+end
+
+LBM --> VSH : Error: "No matching rule or healthy servers"
+deactivate LBM
+
+VSH --> Client : HTTP 503 Service Unavailable\n{"error": "No matching rule or healthy servers"}
+deactivate VSH
+
+@enduml
+
+
+================================================================================
+            5.3 SEQUENCE DIAGRAM - Configuration Reload
+================================================================================
+
+@startuml Sequence_Config_Reload
+title Sequence Diagram: Dynamic Configuration Reload
+
+participant "Config Watcher\nGoroutine" as Watcher
+participant "Config Module" as Config
+participant "File System" as FS
+participant "Virtual Services" as VS
+participant "Logger" as Log
+
+loop Every 2 Seconds
+    Watcher -> FS : Stat("config/config.json")
+    activate FS
+    FS --> Watcher : FileInfo (ModTime)
+    deactivate FS
+    
+    Watcher -> Watcher : Compare ModTime with lastModified
+    
+    alt File Modified
+        Watcher -> Log : "Configuration file updated. Reloading..."
+        
+        Watcher -> Config : ReloadConfig()
+        activate Config
+        
+        Config -> Config : Lock mutex
+        Config -> FS : ReadFile("config/config.json")
+        activate FS
+        FS --> Config : JSON bytes
+        deactivate FS
+        
+        Config -> Config : json.Unmarshal(data, &updatedServices)
+        Config -> Config : VirtualServices = updatedServices
+        Config -> Config : Unlock mutex
+        
+        Config --> Watcher : Config reloaded
+        deactivate Config
+        
+        Watcher -> VS : restartVirtualServices()
+        activate VS
+        
+        loop For each VirtualService
+            VS -> VS : StopExistingServer(port)
+            
+            alt Has SSL Certificate
+                VS -> VS : StartHTTPS(forwardHandler)
+            else No Certificate
+                VS -> VS : Start(forwardHandler)
+            end
+        end
+        
+        VS --> Watcher : All services restarted
+        deactivate VS
+        
+        Watcher -> Log : "All virtual services restarted"
+        Watcher -> Watcher : lastModified = ModTime
+    end
+end
+
+@enduml
+
+
+================================================================================
+            ADDITIONAL: Component Diagram
+================================================================================
+
+@startuml Component_Diagram
+title Advanced Load Balancer - Component Diagram
+
+package "Load Balancer System" {
+    
+    package "Entry Point" {
+        [main.go] as Main
+    }
+    
+    package "API Layer" {
+        [handlers.go] as Handlers
+        [Middleware Chain] as Middleware
+    }
+    
+    package "Core Logic" {
+        [loadbalancing.go] as LB
+        [healthcheck.go] as HC
+    }
+    
+    package "Models" {
+        [server.go] as Server
+        [virtualservice.go] as VS
+        [ssl.go] as SSL
+    }
+    
+    package "Configuration" {
+        [config.go] as Config
+        [config.json] as ConfigFile
+        [user_conf.json] as UserConf
+    }
+    
+    package "Utilities" {
+        [utils.go] as Utils
+        [logging.go] as Logging
+    }
+}
+
+cloud "External Services" {
+    database "Redis" as Redis
+    node "Backend Server 1" as BE1
+    node "Backend Server 2" as BE2
+    node "Backend Server N" as BEN
+}
+
+actor "Client" as Client
+actor "Admin" as Admin
+
+Client --> Handlers : HTTP/HTTPS Requests
+Admin --> Handlers : REST API Calls
+
+Main --> Config : Initialize
+Main --> HC : Start Health Checks
+Main --> Handlers : Setup Routes
+
+Handlers --> Middleware : Apply Security
+Middleware --> LB : Route Request
+LB --> Server : Select Server
+LB --> VS : Get Algorithm
+
+HC --> Server : Check Health
+Server --> BE1 : Health Probe
+Server --> BE2 : Health Probe
+
+VS --> SSL : Get Certificate
+VS --> BE1 : Forward Request
+VS --> BE2 : Forward Request
+VS --> BEN : Forward Request
+
+Utils --> Redis : Rate Limit State
+Config --> ConfigFile : Load
+Config --> UserConf : Load Auth
+
+@enduml
+
+
+================================================================================
+            ADDITIONAL: Class Diagram
+================================================================================
+
+@startuml Class_Diagram
+title Advanced Load Balancer - Class Diagram
+
+class Server {
+    +Name: string
+    +URL: string
+    +Weight: int
+    +Health: bool
+    +Connections: int
+    --
+    +CheckHealth(): bool
+    +NewServer(name, url, weight): *Server
+}
+
+class VirtualService {
+    +Port: int
+    +Algorithm: string
+    +ServerList: []*Server
+    +RateLimit: int
+    +StatusCode: int
+    +Message: string
+    +ContentRoutingRules: []ContentRoutingRule
+    +Logger: *logrus.Logger
+    --
+    +Start(forwardHandler)
+    +StartHTTPS(forwardHandler)
+}
+
+class ContentRoutingRule {
+    +Key: string
+    +Value: string
+    +ServerName: string
+    --
+    +Matches(req *http.Request): bool
+}
+
+class SSLCertificate {
+    +CertPath: string
+    +KeyPath: string
+    +Port: int
+}
+
+class Config {
+    -VirtualServices: []*VirtualService
+    -configFile: string
+    -mu: sync.Mutex
+    -RedisClient: *redis.Client
+    --
+    +InitConfig()
+    +ReloadConfig()
+    +WatchConfigChanges()
+    +DisplayConfig()
+    +InitializeRedis()
+    +LoadUserConfig(): *UserConfig
+}
+
+class Handlers {
+    -serverMap: map[int]*http.Server
+    -blacklistedIPs: map[string]bool
+    --
+    +GetVirtualServices(w, r)
+    +GetVirtualService(w, r)
+    +CreateVirtualService(w, r)
+    +UpdateVirtualService(w, r)
+    +DeleteVirtualService(w, r)
+    +AddIPRule(w, r)
+    +GenerateCertificateHandler(w, r)
+    +RenewCertificateHandler(w, r)
+    +UpdateRateLimit(w, r)
+    +AddContentRoutingRule(w, r)
+    +ForwardRequest(res, req, vs)
+    +MiddlewareIPBlacklist(next): Handler
+    +BasicAuthMiddleware(user, pass): Handler
+    +MiddlewareSlidingWindowRateLimiting(next): Handler
+}
+
+class LoadBalancing {
+    -rrIndex: int
+    -rrMutex: sync.Mutex
+    -currentIndex: int
+    -currentWeight: int
+    -HealthState: map[string]bool
+    --
+    +GetRoundRobinServer(serverList, logger): *Server
+    +GetWeightedRoundRobinServer(serverList, logger): *Server
+    +GetLeastConnectionsServer(serverList, logger): *Server
+    +GetWeightedLeastConnectionsServer(serverList, logger): *Server
+    +GetContentBasedServer(vs, req): *Server
+    +GetHealthyServer(vs, req): *Server
+    +UpdateHealthState(url, health)
+}
+
+class HealthCheck {
+    +StartHealthCheck(virtualServices)
+}
+
+class SSLModule {
+    +Certificates: map[int]*SSLCertificate
+    --
+    +UploadCertificate(certPath, keyPath, port): error
+    +GetCertificate(port): *SSLCertificate
+    +GenerateCertificate(port, cn, days): (string, string)
+    +RenewCertificate(port, cn, days): (string, string)
+    +IsCertificateExpiring(certPath, days): bool
+    +RotateCertificates()
+    +StartCertificateRotation()
+}
+
+VirtualService "1" *-- "many" Server : contains
+VirtualService "1" *-- "many" ContentRoutingRule : contains
+Config "1" *-- "many" VirtualService : manages
+SSLModule "1" *-- "many" SSLCertificate : manages
+Handlers ..> VirtualService : uses
+Handlers ..> LoadBalancing : uses
+LoadBalancing ..> Server : selects
+HealthCheck ..> Server : monitors
+
+@enduml
+
+
+================================================================================
+            ADDITIONAL: Deployment Diagram
+================================================================================
+
+@startuml Deployment_Diagram
+title Advanced Load Balancer - Deployment Diagram
+
+node "Load Balancer Host" {
+    artifact "load-balancer" as LB {
+        component "Admin API\n:8080" as API
+        component "VS Listener\n:7001" as VS1
+        component "VS Listener\n:7002" as VS2
+        component "Health Checker" as HC
+        component "Cert Rotator" as CR
+    }
+    
+    folder "config/" {
+        file "config.json"
+        file "user_conf.json"
+    }
+    
+    folder "certs/" {
+        folder "7001/" {
+            file "cert.crt"
+            file "key.key"
+        }
+    }
+    
+    folder "logs/" {
+        file "vs_7001.log"
+        file "vs_7002.log"
+    }
+}
+
+node "Redis Server" {
+    database "Redis\n:6379" as Redis
+}
+
+node "Backend Server 1" {
+    component "App\n:5001" as App1
+}
+
+node "Backend Server 2" {
+    component "App\n:5002" as App2
+}
+
+node "Backend Server 3" {
+    component "App\n:5003" as App3
+}
+
+cloud "Clients" {
+    actor "End User" as User
+    actor "Admin" as Admin
+}
+
+User --> VS1 : HTTP/HTTPS
+User --> VS2 : HTTP/HTTPS
+Admin --> API : REST API
+
+VS1 --> App1 : Proxy
+VS1 --> App2 : Proxy
+VS2 --> App2 : Proxy
+VS2 --> App3 : Proxy
+
+HC --> App1 : Health Check
+HC --> App2 : Health Check
+HC --> App3 : Health Check
+
+LB --> Redis : Rate Limit State
+
+@enduml
+
+
+================================================================================
+                              END OF UML DIAGRAMS
+================================================================================
+
+NOTES:
+------
+1. All diagrams use PlantUML syntax
+2. Render at: https://www.plantuml.com/plantuml/uml/
+3. VS Code Extension: "PlantUML" by jebbs
+4. IntelliJ Plugin: "PlantUML Integration"
+5. Export formats: PNG, SVG, PDF, EPS
+
+For the Gantt Chart:
+- Project Duration: December 1, 2025 - January 31, 2026 (2 months)
+- Current Status: 60% complete (as of January 8, 2026)
+- Phases 1-2: Completed
+- Phase 3: In Progress (60%)
+- Phases 4-5: Pending
+
+================================================================================

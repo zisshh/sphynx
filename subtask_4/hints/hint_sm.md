@@ -1,0 +1,1 @@
+Content-based routing requires examining request headers and dynamically forwarding them to appropriate backend servers based on predefined rules. Ensure that the VirtualService scheduling algorithm is set to content_based.

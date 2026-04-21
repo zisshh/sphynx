@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Middleware Pattern",
+    "description": "Implements the Middleware pattern to manage rate limiting as an HTTP middleware, ensuring chainability with other middleware components."
+  },
+  {
+    "title": "Repository Pattern",
+    "description": "Uses the Repository pattern to abstract Redis operations, enabling easier testing and mocking of data interactions."
+  },
+  {
+    "title": "Factory Pattern",
+    "description": "Applies the Factory pattern to create rate limiters dynamically based on configuration, supporting different rate limiting strategies."
+  }
+]

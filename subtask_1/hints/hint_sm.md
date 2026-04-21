@@ -1,0 +1,1 @@
+Focus on designing modular components that can handle server health checks, manage traffic distribution, and support dynamic updates. Use appropriate design patterns like Singleton for global configurations and Strategy for selecting load balancing algorithms.

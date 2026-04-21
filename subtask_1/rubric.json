@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Singleton Pattern",
+      "description": "Uses Singleton pattern for managing shared configurations."
+    },
+    {
+      "title": "Factory Pattern",
+      "description": "Uses Factory pattern for creating virtual services and servers."
+    },
+    {
+      "title": "Strategy Pattern",
+      "description": "Uses Strategy pattern for dynamically selecting load balancing algorithms."
+    }
+  ]
+  

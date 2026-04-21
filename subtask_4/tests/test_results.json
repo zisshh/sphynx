@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Add routing rules",
+    "description": "Adds a routing rule to the load balancer, and tests if the rule is applied correctly",
+    "type": "e2e",
+    "isPassing": true
+  },
+  {
+    "title": "Get routing rules",
+    "description": "Tests if the routing rules are retrieved correctly",
+    "type": "integration",
+    "isPassing": true
+  },
+  {
+    "title": "Delete routing rules",
+    "description": "Deletes a routing rule from the load balancer, and tests if the rule is removed correctly",
+    "type": "integration",
+    "isPassing": true
+  }
+]

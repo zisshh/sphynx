@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Rate Limit",
+    "description": "Tests the rate limit feature of the API",
+    "type": "e2e",
+    "isPassing": true
+  }
+]
